@@ -82,7 +82,7 @@ class _HomeState extends State<Home> {
                   Text("${_getTime(dateTime)}"+"${timeOfDay(dateTime)}"),
                   SizedBox(height: 10,),
                   Container(
-                    height: 20,
+                    height: 25,
                     padding: EdgeInsets.symmetric(horizontal: 8, vertical: 5),
                     decoration: BoxDecoration(/*shape: BoxShape.circle,*/ color: Colors.green, borderRadius: BorderRadius.circular(15.0)),
                     child: Center(child: Text(noOfMessages.toString(), style: TextStyle(fontSize: 12, color: Colors.white),)),
