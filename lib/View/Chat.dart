@@ -10,7 +10,7 @@ class Chat extends StatelessWidget {
           decoration: BoxDecoration(shape: BoxShape.circle),
           child: Image.asset("www"),
         ),
-        title: Text("Hello"),
+        title: Text("Hello00"),
         actions: <Widget>[
           Icon(Icons.videocam),
           SizedBox(width: 10,),
@@ -44,6 +44,7 @@ class Chat extends StatelessWidget {
                         ),
                         Icon(Icons.refresh),
                         Icon(Icons.camera_alt)
+
                       ],
                     ),
                   ),
