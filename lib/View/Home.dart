@@ -16,8 +16,7 @@ class _HomeState extends State<Home> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return Container(
         child: FutureBuilder<List<ListChatModel>>(
             future: curList(),
             builder: (context, snapshot){
@@ -43,9 +42,7 @@ class _HomeState extends State<Home> {
                 return Container();
               }
         }),
-      ),
-      floatingActionButton: FloatingActionButton(onPressed: null, child: Icon(Icons.message, color: Colors.white,), backgroundColor: Colors.green,),
-    );
+      );
   }
 
   Widget chatDesign(String img, String name, String lastMessage, DateTime dateTime, int noOfMessages){
@@ -62,8 +59,53 @@ class _HomeState extends State<Home> {
         children: <Widget>[
           Row(
             children: <Widget>[
-              Container(
-                child: Icon(Icons.account_circle, size: 60,),
+              GestureDetector(
+                onTap: (){
+                  showDialog(context: context,builder:(BuildContext context){
+                    return Dialog(
+                      child: Container(
+                        height: 400,
+                        child: Column(
+                          children: <Widget>[
+                            Expanded(
+                              child: Stack(
+                                children: <Widget>[
+                                  Center(/*child: Icon(Icons.account_circle,size: 200,)*/
+                                  child: Image.asset(img, width: MediaQuery.of(context).size.width, fit: BoxFit.cover,),),
+                                  Align(
+                                    alignment: Alignment.topLeft,
+                                    child: Container(
+                                      padding: EdgeInsets.all(8.0),
+                                      height: 40,
+                                      width: MediaQuery.of(context).size.width,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black.withOpacity(0.4),
+                                      ),
+                                      child: Text(name, style: TextStyle(fontSize: 20, color: Colors.white),),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Container(
+                              child: Row(
+                                children: <Widget>[
+                                  Expanded(child: Icon(Icons.message)),
+                                  Expanded(child: Icon(Icons.info_outline))
+                                ],
+                              ),
+                              color: Colors.greenAccent,
+                              height: 50,
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  });
+                },
+                child: Container(
+                  child: Icon(Icons.account_circle, size: 60,),
+                ),
               ),
               Expanded(child: Container(
                 padding: EdgeInsets.only(left:10.0),
