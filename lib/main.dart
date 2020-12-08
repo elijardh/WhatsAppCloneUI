@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:whatsappui/View/Landing.dart';
 import 'package:whatsappui/View/Chat.dart';
+import 'package:whatsappui/View/Profile.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,6 +37,6 @@ class MyApp extends StatelessWidget {
           tabBarTheme: TabBarTheme()
         ),
         debugShowCheckedModeBanner: false,
-        home: Chat());
+        home: Profile());
   }
 }
