@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsappui/View/Profile.dart';
 
 class Chat extends StatelessWidget {
   final String name;
@@ -12,7 +13,22 @@ class Chat extends StatelessWidget {
             decoration: BoxDecoration(shape: BoxShape.circle),
             //child: Image.asset("www"),
           ),
-          title: Text(name),
+          title: GestureDetector(
+            child: Text(name),
+            onTap: (){
+              Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context){
+                return new Profile(name);
+              }));
+            },
+          ),
+/*          title: GestureDetector(
+            onTap: (){
+              Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context){
+                return new Profile(name: name,);
+              }));
+            },
+            child: Expanded(child: Container(child: Text(name))),
+          ),*/
           actions: <Widget>[
             Icon(Icons.videocam),
             SizedBox(width: 20,),

@@ -37,6 +37,6 @@ class MyApp extends StatelessWidget {
           tabBarTheme: TabBarTheme()
         ),
         debugShowCheckedModeBanner: false,
-        home: Profile());
+        home: Landing());
   }
 }
